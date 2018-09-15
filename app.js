@@ -54,12 +54,7 @@ $(document).ready(function () {
         var td3 = $("<td>");
         td3.text(sv.startDate);
         tr.append(td3);
-        var parsedDate = Date.parse(sv.startDate);
-        var now = Date.now();
-        var timepassed = now - parsedDate;
-        console.log(timepassed);
-        var days = timepassed/86400000;
-        var months = days/30;
+        var months = moment().diff(sv.startDate,"months");
         var td4 = $("<td>");
         td4.text(months);
         tr.append(td4);
